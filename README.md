@@ -40,3 +40,8 @@ class Swift_TDDTests: XCTestCase {
 }
 ```
 
+<h3>Unit Test Success</h3>
+
+ <img width="901" alt="스크린샷 2022-04-27 오후 9 21 58" src="https://user-images.githubusercontent.com/23008224/165517182-83a999be-c280-4093-9f47-4c34a04f6572.png">
+
+
