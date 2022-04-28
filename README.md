@@ -93,6 +93,27 @@ class Swift_TDDTests: XCTestCase {
     - XCTAssertNotEqual expression1 != expression2 이면 True 이며 테스트를 통과 하며, 그렇지 않으면 Message 값을 출력한다.
     - XCTAssertEqual은 FloatingPoint와 Numeric 값을 expression에 받을수 있는 것이 존재 하며, FloatingPoint는 "부동 소수점 숫자 타입" 이며, Numeric 같은 경우 "정수 및 부동 소수점 타입"을 말한다. 
 
+
+
+
+- Comparable Value Assertions
+
+  - 두 값을 비교해서 더 큰지 작은지를 테스트 한다.
+
+    ```swift
+    - XCTAssertGreaterThan(<#T##expression1: Comparable##Comparable#>, <#T##expression2: Comparable##Comparable#>)
+    - XCTAssertGreaterThan(<#T##expression1: Comparable##Comparable#>, <#T##expression2: Comparable##Comparable#>, <#T##message: String##String#>)
+    - XCTAssertGreaterThanOrEqual(<#T##expression1: Comparable##Comparable#>, <#T##expression2: Comparable##Comparable#>)
+    - XCTAssertLessThan(<#T##expression1: Comparable##Comparable#>, <#T##expression2: Comparable##Comparable#>)
+    - XCTAssertLessThan(<#T##expression1: Comparable##Comparable#>, <#T##expression2: Comparable##Comparable#>, <#T##message: String##String#>)
+    - XCTAssertLessThanOrEqual(<#T##expression1: Comparable##Comparable#>, <#T##expression2: Comparable##Comparable#>)
+    ```
+
+    - XCTAssertGreaterThan expression1 > expression2 이면 True 그렇지 않으면 Message 값을 출력한다.
+    - XCTAssertGreaterThanOrEqual expression1 >= expression2 이면 True 그렇지 않으면 Message 값을 출력한다.
+    - XCTAssertLessThan expression1 < expression2 이면 True 그렇지 않으면 Message 값을 출력한다.
+    - XCTAssertLessThanOrEqual expression1 <= expression2 이면 True 그렇지 않으면 Message 값을 출력한다.
+
   
 
 <h3>Unit Test Success</h3>
