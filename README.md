@@ -116,8 +116,32 @@ class Swift_TDDTests: XCTestCase {
 
   
 
-<h3>Unit Test Success</h3>
+- XCTest의 Async Unit Test
 
- <img width="901" alt="스크린샷 2022-04-27 오후 9 21 58" src="https://user-images.githubusercontent.com/23008224/165517182-83a999be-c280-4093-9f47-4c34a04f6572.png">
+  - Async Call Back, delegate Method, 특정 시간 내에 완료 해야 하는 상황, DispatchQueue Async Block 등에 사용한다.	
+
+    ```swift
+    XCTestExpectation(description: <#T##String#>)
+    ```
+
+    - XCTestExpectation(description: **<#T##String#>**) 비동기 코드 작업을 수행하기 전에 작업 설명이 포함된 인스턴스를 만드는 Method
+      - description : 작업 설명을 작성하는 부분
+
+  - 비동기 작업을 반환 되면(Call Back: ) Assert을 수행하여 작업의 수행 결과과 예상 결과를 충족 하는지 확인 한다. 작업이 완료 되면 fullfill() 대기를 중지 시키고 다음 테스트를 진행할수 있도록 알려준다.
+
+    ```swift
+    requestExpectation.fulfill()
+    ```
+
+    - fullfill() wait문의 시간 초과가 만료되기 전에 메소드를 실행하지 않으면 XCTest 테스트 실패를 기록합니다.
+
+    ```swift
+    wait(for: [requestExpectation], timeout: 82.0)
+    ```
+
+<br>
+
+<img width="905" alt="스크린샷 2022-04-29 오후 7 58 23" src="https://user-images.githubusercontent.com/23008224/165932128-38c341f6-b3df-45ef-8232-a3b0687ddc35.png">
+
 
 
